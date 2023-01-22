@@ -14,7 +14,7 @@ class Hangman():
 
     def check_guess(self, guess): #class methods
     
-        if self.guess.lower() in self.word:
+        if guess.lower() in self.word:
             print(f'Good guess! {guess} is in the word.')
         
             for i, character in enumerate(self.word):
@@ -24,7 +24,7 @@ class Hangman():
 
         else:
             self.num_lives -= 1
-            print(f"sorry, {self.guess} is not in the world.")
+            print(f"sorry, {guess} is not in the world.")
             print(f"You have {self.num_lives} lives left.") 
         
         self.list_of_guess.append(guess)
@@ -36,10 +36,10 @@ class Hangman():
             if not guess.isalpha() and len(guess) != 1:
                  print('Invalid letter. Please, enter a single alphabetical character.')
 
-            elif self.guess in self.list_of_guess:
+            elif guess in self.list_of_guess:
                  print('You already tried that letter!')
 
             else:
-                 self.check_guess(self.guess)
+                 self.check_guess(guess)
                  break
                  
