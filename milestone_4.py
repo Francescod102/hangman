@@ -27,7 +27,7 @@ class Hangman():
             print(f"sorry, {guess} is not in the world.")
             print(f"You have {self.num_lives} lives left.") 
         
-        self.list_of_guess.append(guess)
+        self.list_of_guesses.append(guess)
         print(self.word_guessed)
     
     def ask_for_input(self):
@@ -36,7 +36,7 @@ class Hangman():
             if not guess.isalpha() and len(guess) != 1:
                  print('Invalid letter. Please, enter a single alphabetical character.')
 
-            elif guess in self.list_of_guess:
+            elif guess in self.list_of_guesses:
                  print('You already tried that letter!')
 
             else:
